@@ -1,0 +1,23 @@
+.scrollable-slider {
+  position: absolute;
+  width: 90%;
+  bottom: 0;
+  top: 50vh;
+
+  background-attachment: local;
+  border-radius: 40px 40px 0px 40px;
+  height: 90vh;
+  /* overflow-y: auto; */
+  z-index: 1;
+  box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  scrollbar-width: none;
+  background-color: #fff;
+}
+
+.wrapper {
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  border-radius: 40px;
+}
