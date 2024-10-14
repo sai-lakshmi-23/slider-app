@@ -6,8 +6,10 @@
   }
   
   .dog-section-updated {
+    width: 80%;
+    margin: auto;
     display: flex;
-    align-items: flex-start;
+    justify-content: center;
   }
   
   .right-text {
@@ -34,7 +36,7 @@
   
   .content-wrapper {
     padding-top: 1.5rem;
-    background: linear-gradient(190deg, transparent 80%, #fff 20%), radial-gradient(42.38% 44.19% at 50.14% 67.33%, #FFF280 0%, #FFC700 100%);
+    background: linear-gradient(187deg, transparent 80%, #fff 20%), radial-gradient(42.38% 44.19% at 50.14% 67.33%, #FFF280 0%, #FFC700 100%);
     scrollbar-width: none;
     border-radius: 40px;
   }

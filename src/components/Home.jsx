@@ -7,7 +7,7 @@ const Home = () => {
     <div className="slider-tip"></div>
     <div className="dog-section-updated">
       <img src={first1} alt="Dog" className="dog-image-updated" />
-      <div className="dog-history">
+      <div className="dog-history-updated">
         <h3 className="history-heading">History of</h3>
         <h2 className="dog-name-updated">Alabay</h2>
         <p className="right-text">

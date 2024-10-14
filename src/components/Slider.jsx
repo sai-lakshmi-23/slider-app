@@ -1,13 +1,23 @@
 import React, { useEffect, useState } from "react";
 import RightSlider from "./RightSlider";
 import Home from "./Home";
+import Vision from "./Vision";
+import Economy from "./Economy";
+import Merchandise from "./Merchandise";
 
 const Slider = () => {
-  const [scrollY, setScrollY] = useState(0);
+  const [scrollY, setScrollY] = useState(310);
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      // console.log("Scroll Y Values",window.scrollY)
+
+      if(window.scrollY === 310) {
+        setScrollY(20);
+      }
+      if(window.scrollY === 0) {
+        setScrollY(310);
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -20,12 +30,16 @@ const Slider = () => {
     <div
       className="scrollable-slider"
       style={{
-        transform: `translateY(${Math.max(0, 300 - scrollY * 0.5)}px)`,
+        transform: `translateY(${scrollY}px)`,
       }}
     >
       <div className="wrapper">
         <Home />
         <RightSlider />
+        <div className="head1-updated">project vision</div>
+        <Vision />
+        <Economy />
+        <Merchandise />
       </div>
     </div>
   );
