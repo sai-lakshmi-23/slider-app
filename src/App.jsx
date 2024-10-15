@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./styles/app.css"; // Import your CSS file
 import "./styles/home.css"
 import "./styles/slider.css"

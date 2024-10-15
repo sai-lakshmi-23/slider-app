@@ -8,9 +8,19 @@ import ButtonArrow from "../assets/images/button-arrow.svg";
 import GamePreview1 from "../assets/images/game-preview-img1.svg";
 import GamePreview2 from "../assets/images/game-preview-img2.svg";
 import GamePreview3 from "../assets/images/game-preview-img3.svg";
+import GameGuardian from "../assets/images/alabay-guardian.svg";
+import GameHeritage from "../assets/images/alabay-heritage.svg";
+import Abilities from "../assets/games/adventure/abilities.png";
+import Artifacts from "../assets/games/adventure/artifacts.png";
+import LocationPreviews from "../assets/games/adventure/locations-preview.png";
+import Overview from "../assets/games/adventure/overview.png";
+import Guard1 from "../assets/games/guard/image1-guard.png";
+import Guard2 from "../assets/games/guard/image2-guard.png";
+import Guard3 from "../assets/games/guard/image3-guard.png";
 import styled from "styled-components";
 import ImageSlider from "./ImageSlider";
 import SocialMedia from "./SocialMedia";
+import { useNavigate } from "react-router-dom";
 
 // Wrapper for the image with a smoother transition effect
 const ImageWrapper = styled.img`
@@ -69,7 +79,7 @@ const AdjustArrowRight = styled.div`
 const Button = styled.button`
   border: none;
   box-shadow: 12px 11px 11.3px 0px rgba(0, 0, 0, 0.61);
-  background: rgba(132, 58, 252, 1);
+  background: ${(props) => props.background};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -109,6 +119,8 @@ const Games = () => {
   const newImages = [pic5, pic6];
   const images = [GamePreview1, GamePreview2, GamePreview3];
 
+  const navigate = useNavigate();
+
   const [newCurrentIndex, setNewCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(null); // Track the direction of the transition
 
@@ -132,6 +144,31 @@ const Games = () => {
     }, 500); // Time delay to sync with transition duration
   };
 
+  const handleDiscover = () => {
+    const images =
+      newCurrentIndex === 0
+        ? [Guard1, Guard2, Guard3]
+        : [Abilities, Artifacts, LocationPreviews, Overview];
+    const gameData =
+      newCurrentIndex === 0
+        ? {
+            backgroundImage: GameGuardian,
+            color: "rgba(164, 168, 255, 1)",
+            header: "ALABAY GUARDIAN",
+            text: "SHEPHERD OF THE STEPPES",
+            images,
+          }
+        : {
+            backgroundImage: GameHeritage,
+            color: "rgba(144, 255, 174, 1)",
+            header: "ALABAY HERITAGE",
+            text: "THE LOST ADVENTURE",
+            images,
+          };
+
+    navigate("/game-player", { state: { gameData } });
+  };
+
   return (
     <div>
       <Header>GAMES</Header>
@@ -149,7 +186,14 @@ const Games = () => {
           alt={`Slide ${newCurrentIndex + 1}`}
           direction={direction}
         />
-        <Button>
+        <Button
+          onClick={handleDiscover}
+          background={
+            newCurrentIndex === 0
+              ? "rgba(132, 58, 252, 1)"
+              : "rgba(69, 214, 137, 1)"
+          }
+        >
           <Text>DISCOVER</Text>
           <IconRight src={ButtonArrow} alt="right button arrow" />
         </Button>

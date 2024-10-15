@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "BaronKuffner";
+  src: url("../fonts/Baron Kuffner.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 body,
 html {
   margin: 0;
