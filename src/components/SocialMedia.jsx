@@ -47,6 +47,8 @@ const SocialMedia = () => {
       <Header>SOCIAL MEDIA</Header>
       <Header>LINKS</Header>
 
+      {/* <div className="branch"></div> */}
+
       <Wrapper>
         <SocialMediaAccounts>
           <Container>

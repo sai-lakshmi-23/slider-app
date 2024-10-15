@@ -83,3 +83,33 @@ html {
 }
 
 
+.branch {
+  border-top-right-radius: 100px 20px; /* Inverted: changed to top-right */
+  border: 1px solid #000;
+  border-bottom: none; /* Inverted: bottom border removed */
+  height: 500px;
+  width: 200px;
+  position: relative;
+  border-left: none;
+}
+.branch:before,
+.branch:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: -1px;
+}
+.branch:before {
+  height: 20px;
+  width: 100%;
+  width: calc(100% + 1px);
+  border-top-right-radius: 100px 20px; /* Inverted: top-right curve */
+  border-top: 1px solid #000; /* Inverted: added top border */
+  border-right: solid 1px #000;
+  bottom: -1px; /* Inverted: moved to the bottom */
+}
+.branch:after {
+  height: calc(100% - 18px);
+  border-left: 1px solid #000;
+  bottom: 19px; /* Inverted: placed at bottom */
+}

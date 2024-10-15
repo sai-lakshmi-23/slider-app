@@ -14,8 +14,8 @@ import Games from "./Games";
 
 // Styling for the background wrapper
 const Wrapper = styled.div`
-  background: linear-gradient(191deg, transparent 99.5%, #fff 20%),
-    linear-gradient(-7deg, transparent 21.5%, #fff 20%),
+  background: linear-gradient(191deg, transparent 50.5%, #fff 20%),
+    linear-gradient(-7deg, transparent 72.5%, #fff 20%),
     radial-gradient(50% 13.19% at 50% 36.33%, #fff280 0%, #ffc700 100%);
   padding: 5rem 0;
 `;

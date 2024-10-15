@@ -5,7 +5,7 @@ import RoadMap from "./RoadMap";
 import Management from "./Management";
 
 const Wrapper = styled.div`
-  background: linear-gradient(191deg, transparent 54.5%, #fff 20%),
+  background: linear-gradient(190deg, transparent 54.5%, #fff 20%),
     linear-gradient(-11deg, transparent 81.5%, #fff 20%),
     radial-gradient(50% 13.19% at 50% 36.33%, #fff280 0%, #ffc700 100%);
 `;
