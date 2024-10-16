@@ -4,6 +4,7 @@ import viteCompression from "vite-plugin-compression"; // For compressing assets
 import { ViteMinifyPlugin } from "vite-plugin-minify"; // For minimizing JS and CSS
 
 export default defineConfig({
+  base: "/slider-app/",
   plugins: [
     react(),
     viteCompression({
@@ -19,13 +20,13 @@ export default defineConfig({
       minifyJS: true,
     }),
   ],
-  base: "/slider-app/",
 
   build: {
     outDir: "dist", // Directory to output the build
     sourcemap: false, // Disable source maps for production
     cssCodeSplit: true, // Split CSS into smaller chunks for better performance
     rollupOptions: {
+      input: './src/main.jsx', // Entry point
       output: {
         manualChunks: {
           // Create chunks for libraries (improves caching)
@@ -50,6 +51,7 @@ export default defineConfig({
 
   // Accessibility: Define necessary ARIA roles and attributes for keyboard navigation
   resolve: {
+    extensions: ['.js', '.jsx'],
     alias: {
       "@": "/src", // Shortcut for source directory
     },
