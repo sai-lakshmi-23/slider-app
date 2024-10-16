@@ -8,7 +8,7 @@ const RouterConfig = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route path="/slider-app" element={<App />} />
         <Route path="/game-player" element={<GamePlayer />} />
       </Routes>
     </Router>
